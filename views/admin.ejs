@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Crown Proxies</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(to right, #272726, #101010);
+      color: whitesmoke;
+    }
+
+    /* Form */
+
+    .form-control {
+      outline: none;
+      border: 1px solid whitesmoke !important;
+      -webkit-box-shadow: none !important;
+      -moz-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+
+
+    /* Navbar */
+
+    .nav {
+      display: block;
+    }
+
+    .nav-tabs {
+      border: none;
+    }
+
+    .nav-tabs .nav-link {
+      border: none;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+    }
+
+    .nav-tabs .nav-link.active {
+      color: whitesmoke;
+      background-color: transparent;
+      border-left: 2px solid goldenrod;
+      padding-left: 30px;
+    }
+
+    .nav-item {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .nav-link {
+      color: whitesmoke;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: #040404;
+      text-decoration: none;
+    }
+
+    /* Particles */
+
+    #particles-js canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+      z-index: -1;
+    }
+
+    /* Table */
+
+    .table-container {
+      height: calc(100vh - 367px);
+    }
+
+    /* Select Dropdowns */
+
+    select {
+      background: none !important;
+      color: whitesmoke !important;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    option:not(:checked) {
+      background-color: #252425;
+      color: whitesmoke !important;
+    }
+
+    option:checked {
+      background-color: #333233;
+      color: whitesmoke !important;
+    }
+
+    /* Progress Bar */
+
+    .progress-bar {
+      background-color: #f7941d;
+      color: whitesmoke;
+    }
+
+    .progress {
+      height: 50px;
+      font-size: 30px;
+      background-color: transparent;
+      border: 1px solid whitesmoke;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!--Particles-->
+    <div id="particles-js"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3 text-center">
+          <!--Nav Bar-->
+          <img class="mt-4 ml-5" src="img/logo.png" width="55%">
+          <nav class="navbar navbar-default navbar-fixed-side" style="width: 85%; border-radius: 10px; border: 1px solid whitesmoke; background-color: #1e1e1e; margin-top: 30px; margin-bottom: 30px;; margin-left: auto;">
+            <ul class="nav nav-tabs m-auto">
+              <li class="nav-item">
+                <a href="#dashboardPage" class="nav-link active show" data-toggle="tab">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="navbar navbar-default navbar-fixed-side" style="width: 85%; border-radius: 10px; border: 1px solid whitesmoke; background-color: #1e1e1e;margin-left: auto;">
+            <ul class="nav nav-tabs m-auto">
+              <li class="nav-item pt-0 pb-3" style="margin-top: 20px;">
+                <a href="https://twitter.com/crownsupply_" class="btn btn-outline-primary">Twitter</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-9">
+          <!--Tab Content-->
+          <div class="tab-content">
+            <div id="dashboardPage" class="tab-pane fade active show">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 text-center mt-3">
+                    <h1>Admin Dashboard</h1>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="card mt-4 ml-4" style="background-color: transparent; border: 1px solid whitesmoke;">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-12 text-center">
+                            <h2>Welcome Admin</h2>
+                          </div>
+                        </div>
+                        <div class="row text-center mt-4">
+                          <div class="col-6">
+                            <% Array.prototype.sum = function (prop) {
+                              var total = 0
+                              for ( var i = 0, _len = this.length; i < _len; i++ ) {
+                                  total += parseInt(this[i][prop])
+                              }
+                              return total
+                          }%>
+                              <h4>
+                                <%= customers.sum('used') %>
+                              </h4>
+                              <label>GB Used</label>
+                          </div>
+                          <div class="col-6">
+                            <h4>
+                              <span id="customerCount">
+                                <%= customers.length %>
+                              </span>
+                            </h4>
+                            <label>Customers</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mt-4 ml-4" style="background-color: transparent; border: 1px solid whitesmoke;">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-12 text-center">
+                            <h2>Create User</h2>
+                          </div>
+                        </div>
+                        <div class="row text-center mt-2">
+                          <div class="col-6">
+                            <label>Email Address</label>
+                            <input id="createEmail" type="text" class="form-control" placeholder="email@example.com" style="background-color: transparent; border: 1px solid whitesmoke; color: whitesmoke;">
+                          </div>
+                          <div class="col-6">
+                            <label>Password</label>
+                            <input id="createPassword" type="password" class="form-control" placeholder="password123" style="background-color: transparent; border: 1px solid whitesmoke; color: whitesmoke;">
+                          </div>
+                        </div>
+                        <div class="row text-center mt-2">
+                          <div class="col-6">
+                            <label>Customer Name</label>
+                            <input id="createUserName" type="text" class="form-control" placeholder="John Wick" style="background-color: transparent; border: 1px solid whitesmoke; color: whitesmoke;">
+                          </div>
+                          <div class="col-6">
+                            <label>Proxy Login</label>
+                            <input id="createProxyPass" type="text" class="form-control" placeholder="username:password" style="background-color: transparent; border: 1px solid whitesmoke; color: whitesmoke;">
+                          </div>
+                        </div>
+                        <div class="row text-center mt-4">
+                          <div class="col-12">
+                            <a id="createCustomer" onclick="createCustomer()" class="btn btn-outline-primary btn-block">Create Customer</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="card mt-4 ml-4" style="background-color: transparent; border: 1px solid whitesmoke;">
+                      <div class="card-body table-container">
+                        <h4 class="text-center">Customer Logins</h4>
+                        <table class="table scrollable">
+                          <thead style="border: none">
+                            <tr style="border: none;">
+                              <th style="border: none;" scope="col">Email</th>
+                              <th style="border: none;" scope="col">Pass</th>
+                              <th style="border: none;" scope="col">Usage</th>
+                              <th style="border: none;" scope="col">Active</th>
+                            </tr>
+                          </thead>
+                          <tbody style="border: none;">
+                            <% for (var i = 0; i < customers.length; i++) { %>
+                              <tr style="border: none;">
+                                <td style="border: none;" scope="col">
+                                  <%= customers[i].customer_dashboard_email%>
+                                    </th>
+                                    <td style="border: none;" scope="col">
+                                      <%= customers[i].customer_dashboard_pwd%>
+                                        </th>
+                                        <td style="border: none;" scope="col">
+                                          <%= customers[i].used%>
+                                            </th>
+                                            <td style="border: none;" scope="col">
+                                              <%- customers[i].customer_active ? '&#10003;' : '&#10005;' %>
+                                                </th>
+                              </tr>
+                              <% } %>
+                          </tbody style="border: none;">
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card mt-4 ml-4" style="background-color: transparent; border: 1px solid whitesmoke;">
+                      <div class="card-body text-center">
+                        <div class="row">
+                          <div class="col-12">
+                            <h2>Manage Customers</h2>
+                          </div>
+                        </div>
+                        <div class="row text-left mt-2">
+                          <div class="col-6 form-group">
+                            <label>Select Customer</label>
+                            <select id="customerDropdown" class="form-control">
+                              <% for (var i = 0; i < customers.length; i++) { %>
+                                <option value="<%= customers[i].customer_id%>">
+                                  <%= customers[i].customer_dashboard_email%>
+                                </option>
+                                <% } %>
+                            </select>
+                          </div>
+                          <div class="col-3 form-group">
+                            <label>Change Password</label>
+                            <input id="dash" type="text" class="form-control" placeholder="Password" style="background-color: transparent; border: 1px solid whitesmoke; color: whitesmoke;">
+                          </div>
+                          <div class="col-3 form-group">
+                            <label>Change Proxy Login</label>
+                            <input id="proxyLoginPassword" type="text" class="form-control" placeholder="username:password" style="background-color: transparent; border: 1px solid whitesmoke; color: whitesmoke;">
+                          </div>
+                        </div>
+                        <div class="row text-center">
+                          <div class="col-12">
+                            <a id="enableCustomer" onclick="enableCustomer()" class="btn btn-outline-primary">Enable Customer</a>
+                            <a id="disableCustomer" onclick="disableCustomer()" class="btn btn-outline-danger ml-2">Disable Customer</a>
+                            <a id="changePassword" onclick="updatePass()" class="btn btn-outline-warning ml-2">Save Password</a>
+                            <a id="changeProxyLogin" onclick="updateProxyLogin()" class="btn btn-outline-warning ml-2">Save Proxy Login</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/particles.js"></script>
+  <script>
+    particlesJS.load('particles-js', 'js/particles.json', function () {
+      console.log('particles.js loaded');
+    });
+
+    function createCustomer() {
+      $.post('/createCustomer', { name: $('#createUserName').val(), proxyLogin: $('#createProxyPass').val(), email: $('#createEmail').val(), password: $('#createPassword').val() }, function (data) {
+        window.location.reload(false);
+      })
+    }
+
+    function enableCustomer() {
+      $.post('/enableCustomer', { id: $('#customerDropdown').val() }, function (data) {
+        window.location.reload(false);
+      })
+    }
+    function disableCustomer() {
+      $.post('/disableCustomer', { id: $('#customerDropdown').val() }, function (data) {
+        window.location.reload(false);
+      })
+    }
+    function updatePass() {
+      $.post('/updatepass', { id: $('#customerDropdown').val(), newPass: $('#dash').val() }, function (data) {
+        window.location.reload(false);
+      })
+    }
+    function updateProxyLogin() {
+      $.post('/updateprox', { id: $('#customerDropdown').val(), newUser: $('#proxyLoginPassword').val().split(':')[0], newPass: $('#proxyLoginPassword').val().split(':')[1] }, function (data) {
+        window.location.reload(false);
+      })
+    }
+  </script>
+</body>
+
+</html>

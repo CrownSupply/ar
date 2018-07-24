@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Crown Proxies</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+  <style>
+    body {
+      background: linear-gradient(to right, #272726, #101010);
+      color: whitesmoke;
+    }
+
+    /* Form */
+
+    .form-control {
+      outline: none;
+      border: 1px solid whitesmoke !important;
+      -webkit-box-shadow: none !important;
+      -moz-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+
+
+    /* Navbar */
+
+    .nav {
+      display: block;
+    }
+
+    .nav-tabs {
+      border: none;
+    }
+
+    .nav-tabs .nav-link {
+      border: none;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+    }
+
+    .nav-tabs .nav-link.active {
+      color: whitesmoke;
+      background-color: transparent;
+      border-left: 2px solid #f7941d;
+      padding-left: 30px;
+    }
+
+    .nav-item {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .nav-link {
+      color: whitesmoke;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: #f7941d;
+      text-decoration: none;
+    }
+
+    /* Particles */
+
+    #particles-js canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+      z-index: -1;
+    }
+
+    /* Table */
+
+    .table-container {
+      height: calc(100vh - 367px);
+    }
+
+    /* Select Dropdowns */
+
+    select {
+      background: none !important;
+      color: whitesmoke !important;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    option:not(:checked) {
+      background-color: #252425;
+      color: whitesmoke !important;
+    }
+
+    option:checked {
+      background-color: #333233;
+      color: whitesmoke !important;
+    }
+
+    /* Progress Bar */
+
+    .progress {
+      height: 50px;
+      font-size: 35px;
+      background: transparent;
+      border: 1px solid whitesmoke;
+    }
+
+    .progress-bar {
+      background-color: #f7941d;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!--Particles-->
+    <div id="particles-js"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3 text-center">
+          <!--Nav Bar-->
+          <img class="mt-4 ml-5" src="img/logo.png" width="55%">
+          <!--
+          -->
+        </div>
+        <div class="col-9 text-center mt-5">
+          <h1>Dashboard</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <nav class="navbar navbar-default navbar-fixed-side" style="width: 85%; border-radius: 10px; border: 1px solid whitesmoke; background-color: #1e1e1e; margin-top: 30px; margin-bottom: 30px;; margin-left: auto;">
+            <ul class="nav nav-tabs m-auto">
+              <li class="nav-item">
+                <a href="#dashboardPage" class="nav-link active show" data-toggle="tab">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a href="#renewPage" class="nav-link" data-toggle="tab">Renew Plan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="navbar navbar-default navbar-fixed-side" style="width: 85%; border-radius: 10px; border: 1px solid whitesmoke; background-color: #1e1e1e;margin-left: auto;">
+            <ul class="nav nav-tabs m-auto">
+              <li class="nav-item pt-0 pb-3" style="margin-top: 20px;">
+                <a href="https://twitter.com/crownsupply_" class="btn btn-outline-primary">Twitter</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-9">
+          <!--Tab Content-->
+          <div class="tab-content">
+            <div id="dashboardPage" class="tab-pane fade active show">
+              <div class="container">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="card mt-4 ml-4" style="background-color: transparent; border: 1px solid whitesmoke;">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-12 text-center">
+                            <h2>Welcome
+                              <%= username %>
+                            </h2>
+                          </div>
+                        </div>
+                        <div class="row text-center mt-4">
+                          <div class="col-4">
+                            <h4>
+                              <%= total %>
+                            </h4>
+                            <label>GB Plan</label>
+                          </div>
+                          <div class="col-4">
+                            <h4>
+                              <%= usage %>
+                            </h4>
+                            <label>GB Used</label>
+                          </div>
+                          <div class="col-4">
+                            <h4>
+                              <%= daysLeft %>
+                            </h4>
+                            <label>Days Left</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="progress">
+                              <div class="progress-bar" role="progressbar" style="width: <%= usage / total + 0 %>%"></div>
+                              <small class="justify-content-center d-flex w-100">
+                                <%= usage / total + 0 %>%</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6" style="display: table; max-width: 100%">
+                    <div class="card mt-4 ml-4" style="background-color: transparent; border: 1px solid whitesmoke; height: 400px;">
+                      <div class="card-body table-container" style="overflow:scroll">
+                        <table class="table table-sm scrollable">
+                          <h4 class="text-center">Proxies</h4>
+                          <tbody id="proxies">
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card mt-4 ml-4" style="background-color: transparent; border: 1px solid whitesmoke;">
+                      <div class="card-body text-center">
+                        <div class="row">
+                          <div class="col-12">
+                            <h2>Create Proxies</h2>
+                          </div>
+                        </div>
+                        <div class="row text-left">
+                          <div class="col-4 form-group">
+                            <label>Server Location</label>
+                            <select id="server" class="form-control">
+                              <option value="US">United States</option>
+                              <option value="UK">United Kingdom</option>
+                              <option value="NP">Nepal</option>
+                              <option value="IN">India</option>
+                              <option value="DE">Germany</option>
+                              <option value="IE">Ireland</option>
+                              <option valud="DK">Denmark</option>
+                              <option value="RU">Russia</option>
+                              <option value="SE">Sweeden</option>
+                              <option value="BR">Brazil</option>
+                              <option value="FI">Finland</option>
+                              <option value="JP">Japan</option>
+                              <option value="CH">Switzerland</option>
+                              <option value="TW">Taiwan</option>
+                              <option value="JO">Jordan</option>
+                              <option value="NL">Netherlands</option>
+                              <option value="IT">Italy</option>
+                              <option value="HK">Hong Kong</option>
+                              <option value="IQ">Iraq</option>
+                              <option value="CA">Canada</option>
+                              <option value="NO">Norway</option>
+                              <option value="SA">Saudi Arabia</option>
+                              <option value="BD">Bangladesh</option>
+                              <option value="QA">Qatar</option>
+                              <option value="PH">Philippines</option>
+                              <option value="ES">Spain</option>
+                              <option value="VN">Vietnam</option>
+                              <option value="MX">Mexico</option>
+                              <option value="TR">Turkey</option>
+                              <option value="MY">Malaysia</option>
+                            </select>
+                          </div>
+                          <div class="col-4">
+                            <label>Proxy Type</label>
+                            <select id="proxyType" class="form-control">
+                              <option value="static">Static</option>
+                              <option value="rotating">Rotating</option>
+                            </select>
+                          </div>
+                          <div class="col-4 form-group">
+                            <label>Quantity</label>
+                            <input id="quantity" type="number" min="1" max="200" class="form-control" style="background: transparent;color: whitesmoke; border: 1px solid whitesmoke;">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            <a class="btn btn-outline-success" onclick="createProxy()" id="create">Create Proxies</a>
+                            <a class="btn btn-outline-info ml-2" data-clipboard-target="#proxies" id="copy">Copy Table</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="renewPage" class="tab-pane fade">
+              <div class="container mt-4 text-center">
+                <div class="row">
+                  <div class="col-12">
+                    <h1>Renew Plan</h1>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <h5>
+                      <i>This will create a new plan for you that starts when your most recent plan ends</i>
+                    </h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card mt-4 ml-4" style="background-color: transparent; border: 1px solid whitesmoke;">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-12">
+                            <h4>Create Plan</h4>
+                          </div>
+                        </div>
+                        <div class="row text-left">
+                          <div class="col-6">
+                            <label>Plan</label>
+                            <select id="plan" class="form-control">
+                              <option scope="col" value=".5">.5GB</option>
+                              <option scope="col" value="1">1GB</option>
+                              <option scope="col" value="2">2GB</option>
+                              <option scope="col" value="5">5GB</option>
+                              <option scope="col" value="10">10GB</option>
+                              <option scope="col" value="15">15GB</option>
+                              <option scope="col" value="30">30GB</option>
+                              <option scope="col" value="50">50GB</option>
+                            </select>
+                          </div>
+                          <div class="col-6">
+                            <label>Length</label>
+                            <select id="length" class="form-control">
+                              <option scope="col" value="24h">24 Hours</option>
+                              <option scope="col" value="2d">2 Days</option>
+                              <option scope="col" value="5d">5 Days</option>
+                              <option scope="col" value="1w">1 Week</option>
+                              <option scope="col" value="2w">2 Weeks</option>
+                              <option scope="col" value="3w">3 Weeks</option>
+                              <option scope="col" value="1m">1 Month</option>
+                              <option scope="col" value="2m">2 Months</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12 mt-4">
+                            <a id="renewBtn" class="btn btn-outline-success">Renew</a>
+                          </div>
+                        </div>
+                        <div class="row mt-3">
+                          <div class="col-12">
+                            <h6>Plan will start when most recent plan ends</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/particles.js"></script>
+  <script>
+    particlesJS.load('particles-js', 'js/particles.json', function () {
+      console.log('particles.js loaded');
+    });
+
+    /**
+     * Create Proxy
+     */
+    function createProxy() {
+      var region = $('#server').val()
+      var type = $('#proxyType').val()
+      var quantity = $('#quantity').val()
+      $('#proxies').empty()
+
+      $.post('/proxy', { country: region, type: type, quantity: quantity }, function (data) {
+        for (var i = 0; i < data.length; i++) {
+          $('#proxies').append(`<tr><td scope="row">${data[i].ip}:${data[i].port}:${data[i].username}:${data[i].password}</td></tr>`)
+        }
+      })
+    }
+
+    new ClipboardJS('#copy');
+
+  </script>
+</body>
+
+</html>
